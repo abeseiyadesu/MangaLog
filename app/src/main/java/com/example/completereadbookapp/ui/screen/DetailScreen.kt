@@ -7,6 +7,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
@@ -25,6 +26,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
@@ -100,8 +102,7 @@ fun DetailScreenTopBar(
                     contentDescription = ""
                 )
             }
-        }
-        ,
+        },
         // 編集ボタンを作成
         actions = {
             IconButton(
@@ -130,6 +131,13 @@ fun DetailScreenLayout(
     Column(
         modifier = modifier
     ) {
+        Text(
+            text = "タイトル",
+            fontSize = 10.sp,
+            modifier = Modifier.padding(4.dp)
+        )
+        HorizontalDivider(thickness = 1.dp)
+
         // タイトル
         TextButton(
             onClick = {
@@ -145,6 +153,15 @@ fun DetailScreenLayout(
                 color = Color(0xFF2b2d30)
             )
         }
+
+        HorizontalDivider(thickness = 1.dp)
+        Text(
+            text = "コメント",
+            fontSize = 10.sp,
+            modifier = Modifier.padding(4.dp)
+        )
+        HorizontalDivider(thickness = 1.dp)
+
         // 詳細
         TextButton(
             onClick = {

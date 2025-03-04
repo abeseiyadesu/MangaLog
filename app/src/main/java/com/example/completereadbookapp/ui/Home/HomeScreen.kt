@@ -19,9 +19,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material3.BottomAppBarDefaults
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.TextButton
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -50,9 +50,9 @@ fun HomeScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = { navController.navigate("add") },
-                containerColor = BottomAppBarDefaults.bottomAppBarFabColor,
+                containerColor =Color(0xFF25beb1),
                 elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation(),
-                contentColor = Color.Black
+                contentColor = Color.White
             ) {
                 Icon(Icons.Filled.Add, contentDescription = "Add")
             }
@@ -91,17 +91,9 @@ fun HomeScreenLayout(
     modifier: Modifier = Modifier,
     navController: NavController,
 ) {
-    LazyColumn(
-        modifier = modifier.padding(
-            start = 16.dp,
-            end = 16.dp,
-            top = 4.dp,
-            bottom = 4.dp
-        ),
-
-        ) {
+    LazyColumn(modifier = modifier) {
         items(comics) { comic ->
-            //
+            HorizontalDivider(thickness = 1.dp)
             TextButton(
                 onClick = {
                     navController.navigate("detail/${comic.id}")
@@ -115,6 +107,8 @@ fun HomeScreenLayout(
                     color = Color(0xFF2b2d30)
                 )
             }
+            HorizontalDivider(thickness = 1.dp)
+
         }
     }
 }
