@@ -57,3 +57,7 @@ Jetpack Composeを用いたレイアウト設計において、シンプルで�
 
 ![MangaLog3](https://github.com/user-attachments/assets/8bcc7415-7ef1-4e7f-8618-82d018247fbb)
 
+削除確認ダイアログ
+
+![MangaLog4](https://github.com/user-attachments/assets/75d46daf-7804-4a17-a07f-4eb8f1f5ce97)
+
